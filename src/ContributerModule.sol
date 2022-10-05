@@ -2,6 +2,10 @@
 pragma solidity ^0.8.4;
 
 contract ContributerModule {
+
+
+    event ContributerCreated(address contributer);
+
     //This address is not a verified contributer
     error NotAContributer();
 
@@ -14,8 +18,6 @@ contract ContributerModule {
   
     //Counter for contributer ID
     uint256 public contributerCtr;
-    //Contributers array for lookups
-    address[] public contributersArr;
 
 
     //Struct for contributer data
@@ -47,7 +49,7 @@ contract ContributerModule {
     function createContributer() external {
         if (msg.sender != tx.origin) revert NonEOA();
         if (contributers[msg.sender].exists) revert ContributerAlreadyExists();
-        contributers[msg.sender] = Contributer(0,  0, true);
-        contributersArr.push(msg.sender);
+        contributers[msg.sender].exists = true;
+        emit ContributerCreated(msg.sender);
     }
 }

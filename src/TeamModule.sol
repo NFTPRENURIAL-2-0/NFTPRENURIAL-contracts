@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 import "./ContributerModule.sol";
-import "hardhat/console.sol";
 
 contract TeamModule is ContributerModule {
     //Call failed, already on team
@@ -278,46 +277,46 @@ contract TeamModule is ContributerModule {
         }
         revert VoteNotPassed();
     }
-    //view functions
-    function getContributerInvites(address contributer)
-        external
-        view
-        returns (uint256[] memory)
-    {
-        uint256 count = 0;
-        for (uint256 i = 1; i < teamCtr + 1; ++i) {
-            if (teamInvites[contributer][i]) count++;
-        }
-        uint256[] memory tempArr = new uint256[](count);
-        count = 0;
-        for (uint256 i = 1; i < teamCtr + 1; ++i) {
-            if (teamInvites[contributer][i]) {
-                tempArr[count] = i;
-                count++;
-            }
-        }
-        return tempArr;
-    }
+    // //view functions
+    // function getContributerInvites(address contributer)
+    //     external
+    //     view
+    //     returns (uint256[] memory)
+    // {
+    //     uint256 count = 0;
+    //     for (uint256 i = 1; i < teamCtr + 1; ++i) {
+    //         if (teamInvites[contributer][i]) count++;
+    //     }
+    //     uint256[] memory tempArr = new uint256[](count);
+    //     count = 0;
+    //     for (uint256 i = 1; i < teamCtr + 1; ++i) {
+    //         if (teamInvites[contributer][i]) {
+    //             tempArr[count] = i;
+    //             count++;
+    //         }
+    //     }
+    //     return tempArr;
+    // }
 
-    function getTeamInvites(uint256 teamID)
-        external
-        view
-        returns (address[] memory)
-    {
-        uint256 count = 0;
-        for (uint256 i = 0; i < contributersArr.length; ++i) {
-            if (teamInvites[contributersArr[i]][teamID]) count++;
-        }
-        address[] memory tempArr = new address[](count);
-        count = 0;
-        for (uint256 i = 0; i < contributersArr.length; ++i) {
-            if (teamInvites[contributersArr[i]][teamID]) {
-                tempArr[count] = contributersArr[i];
-                count++;
-            }
-        }
-        return tempArr;
-    }
+    // function getTeamInvites(uint256 teamID)
+    //     external
+    //     view
+    //     returns (address[] memory)
+    // {
+    //     uint256 count = 0;
+    //     for (uint256 i = 0; i < contributersArr.length; ++i) {
+    //         if (teamInvites[contributersArr[i]][teamID]) count++;
+    //     }
+    //     address[] memory tempArr = new address[](count);
+    //     count = 0;
+    //     for (uint256 i = 0; i < contributersArr.length; ++i) {
+    //         if (teamInvites[contributersArr[i]][teamID]) {
+    //             tempArr[count] = contributersArr[i];
+    //             count++;
+    //         }
+    //     }
+    //     return tempArr;
+    // }
 
     function getLeader(uint256 teamID) external view returns (address) {
         if (teams[teamID].length == 0) revert TeamDoesNotExist();
