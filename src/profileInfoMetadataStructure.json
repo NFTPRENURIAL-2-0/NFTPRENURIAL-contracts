@@ -1,0 +1,55 @@
+{
+    "contributorAddress": "0xstuff",
+    "profilePicture": "link from internal API",
+    "name": "",
+    "surname": "",
+    "bio": "brief introduction non obligatory",
+    "nationality": "IT",
+    "timezone": "UTC",
+    //NAMES OF THE PROJECTS
+    //BEFORE - AFTER NFTPRENEURIAL RESUME
+
+    "tech_stack":[
+        {
+            "language": "Solidity",
+            "yexp": 1
+        },
+        {
+            "language": "Javascript",
+            "yexp": 0
+        }
+    ],
+
+    "blockchains":[
+        "ETH",
+        "SOL",
+        "ADA"
+    ],
+
+    "reviews":[
+        {
+            "project": "name of projects",
+            "comment": "Non obligatory"
+        },
+        {
+            "project": "name of projects",
+            "comment": "Non obligatory"
+        }
+    ],
+    //VOTES FROM SAME ROLE ON THE PLATFORM
+    //RATINGS CONTRIBUTORS TO CLIENTS
+    //LEADERBOARD FOR ONLY CONTRIBUTORS OR FOUNDING TEAM
+    //SETP 1 OFFCHAIN RATE STEP 2 ONCHAIN RATE GAS PAID BY CONTRIBUTOR
+
+    "additional_languages":[
+        "English",
+        "German"
+    ],
+
+    "user_links":[
+        {
+            "identifier": "Github",
+            "href": "https://github.com/Lochki02"
+        }
+    ]
+}
